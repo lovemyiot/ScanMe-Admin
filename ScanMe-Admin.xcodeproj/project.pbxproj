@@ -23,6 +23,7 @@
 		B26ED40326D94BF300CBF8F6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED40126D94BF300CBF8F6 /* HomeViewModel.swift */; };
 		B26ED40526D94C0D00CBF8F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED40426D94C0D00CBF8F6 /* Constants.swift */; };
 		B26ED40726D9599E00CBF8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26ED40626D9599E00CBF8F6 /* Main.storyboard */; };
+		B26ED40926D95C8F00CBF8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26ED40826D95C8F00CBF8F6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B26ED40126D94BF300CBF8F6 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B26ED40426D94C0D00CBF8F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B26ED40626D9599E00CBF8F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B26ED40826D95C8F00CBF8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5A32A6CE9998F9E61E5A857 /* Pods-ScanMe-Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe-Admin.release.xcconfig"; path = "Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin.release.xcconfig"; sourceTree = "<group>"; };
 		EF80B15E45D0B68B51D8354F /* Pods-ScanMe-Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe-Admin.debug.xcconfig"; path = "Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				B26ED40426D94C0D00CBF8F6 /* Constants.swift */,
+				B26ED40826D95C8F00CBF8F6 /* GoogleService-Info.plist */,
 				B26ED3DF26D9486900CBF8F6 /* Assets.xcassets */,
 				B26ED3E426D9486900CBF8F6 /* Info.plist */,
 			);
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26ED40726D9599E00CBF8F6 /* Main.storyboard in Resources */,
+				B26ED40926D95C8F00CBF8F6 /* GoogleService-Info.plist in Resources */,
 				B26ED3E326D9486900CBF8F6 /* LaunchScreen.storyboard in Resources */,
 				B26ED3E026D9486900CBF8F6 /* Assets.xcassets in Resources */,
 			);
