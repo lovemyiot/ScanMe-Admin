@@ -35,8 +35,6 @@ class DataManager {
         }
     }
     
-    
-    // MARK: Test method for saving new records in Firestore
     func addElement(collectionName: String, identifier: String) {
         let collection = database.collection(collectionName)
         var numberOfDocuments = 0

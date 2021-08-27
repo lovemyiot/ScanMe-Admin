@@ -24,6 +24,7 @@
 		B26ED40526D94C0D00CBF8F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED40426D94C0D00CBF8F6 /* Constants.swift */; };
 		B26ED40726D9599E00CBF8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26ED40626D9599E00CBF8F6 /* Main.storyboard */; };
 		B26ED40926D95C8F00CBF8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26ED40826D95C8F00CBF8F6 /* GoogleService-Info.plist */; };
+		B26ED40C26D95E4200CBF8F6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26ED40B26D95E4200CBF8F6 /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		B26ED40426D94C0D00CBF8F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B26ED40626D9599E00CBF8F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B26ED40826D95C8F00CBF8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B26ED40A26D95E3500CBF8F6 /* ScanMe-Admin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ScanMe-Admin.entitlements"; sourceTree = "<group>"; };
+		B26ED40B26D95E4200CBF8F6 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		D5A32A6CE9998F9E61E5A857 /* Pods-ScanMe-Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe-Admin.release.xcconfig"; path = "Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin.release.xcconfig"; sourceTree = "<group>"; };
 		EF80B15E45D0B68B51D8354F /* Pods-ScanMe-Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe-Admin.debug.xcconfig"; path = "Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B27FADDBA73B297FD15261 /* Pods_ScanMe_Admin.framework in Frameworks */,
+				B26ED40C26D95E4200CBF8F6 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +96,7 @@
 		B26ED3D526D9486400CBF8F6 /* ScanMe-Admin */ = {
 			isa = PBXGroup;
 			children = (
+				B26ED40A26D95E3500CBF8F6 /* ScanMe-Admin.entitlements */,
 				B26ED3ED26D94A3F00CBF8F6 /* App */,
 				B26ED3EE26D94A4500CBF8F6 /* Extensions */,
 				B26ED3EC26D94A3300CBF8F6 /* Managers */,
@@ -172,6 +177,7 @@
 		C722292211E5A8BE79B73393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B26ED40B26D95E4200CBF8F6 /* NetworkExtension.framework */,
 				5C8BC1D44EC920E247BBB213 /* Pods_ScanMe_Admin.framework */,
 			);
 			name = Frameworks;
@@ -443,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ScanMe-Admin/ScanMe-Admin.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
 				INFOPLIST_FILE = "$(SRCROOT)/ScanMe-Admin/Supporting files/Info.plist";
@@ -464,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ScanMe-Admin/ScanMe-Admin.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
 				INFOPLIST_FILE = "$(SRCROOT)/ScanMe-Admin/Supporting files/Info.plist";

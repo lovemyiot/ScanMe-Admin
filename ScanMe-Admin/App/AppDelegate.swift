@@ -2,10 +2,11 @@
 //  AppDelegate.swift
 //  ScanMe-Admin
 //
-//  Created by jacek.kopaczel on 27/08/2021.
+//  Created by Jacek Kopaczel on 27/08/2021.
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
