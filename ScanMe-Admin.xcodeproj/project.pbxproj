@@ -3,27 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37B27FADDBA73B297FD15261 /* Pods_ScanMe_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8BC1D44EC920E247BBB213 /* Pods_ScanMe_Admin.framework */; };
 		B26ED3D726D9486400CBF8F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3D626D9486400CBF8F6 /* AppDelegate.swift */; };
 		B26ED3D926D9486400CBF8F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3D826D9486400CBF8F6 /* SceneDelegate.swift */; };
-		B26ED3DB26D9486400CBF8F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3DA26D9486400CBF8F6 /* ViewController.swift */; };
-		B26ED3DE26D9486400CBF8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26ED3DC26D9486400CBF8F6 /* Main.storyboard */; };
 		B26ED3E026D9486900CBF8F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26ED3DF26D9486900CBF8F6 /* Assets.xcassets */; };
 		B26ED3E326D9486900CBF8F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26ED3E126D9486900CBF8F6 /* LaunchScreen.storyboard */; };
+		B26ED3F326D94AC600CBF8F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3F226D94AC600CBF8F6 /* UIViewController.swift */; };
+		B26ED3F626D94B8C00CBF8F6 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3F426D94B8C00CBF8F6 /* CommandManager.swift */; };
+		B26ED3F726D94B8C00CBF8F6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3F526D94B8C00CBF8F6 /* DataManager.swift */; };
+		B26ED3FB26D94BB200CBF8F6 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3F826D94BB200CBF8F6 /* FirestoreError.swift */; };
+		B26ED3FC26D94BB200CBF8F6 /* CommandDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3F926D94BB200CBF8F6 /* CommandDetailsResponse.swift */; };
+		B26ED3FD26D94BB200CBF8F6 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3FA26D94BB200CBF8F6 /* CommandType.swift */; };
+		B26ED3FF26D94BE200CBF8F6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED3FE26D94BE200CBF8F6 /* MainCoordinator.swift */; };
+		B26ED40226D94BF300CBF8F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED40026D94BF300CBF8F6 /* HomeViewController.swift */; };
+		B26ED40326D94BF300CBF8F6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED40126D94BF300CBF8F6 /* HomeViewModel.swift */; };
+		B26ED40526D94C0D00CBF8F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26ED40426D94C0D00CBF8F6 /* Constants.swift */; };
+		B26ED40726D9599E00CBF8F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26ED40626D9599E00CBF8F6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C8BC1D44EC920E247BBB213 /* Pods_ScanMe_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScanMe_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26ED3D326D9486400CBF8F6 /* ScanMe-Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScanMe-Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26ED3D626D9486400CBF8F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26ED3D826D9486400CBF8F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B26ED3DA26D9486400CBF8F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B26ED3DD26D9486400CBF8F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B26ED3DF26D9486900CBF8F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B26ED3E226D9486900CBF8F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B26ED3E426D9486900CBF8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B26ED3F226D94AC600CBF8F6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B26ED3F426D94B8C00CBF8F6 /* CommandManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
+		B26ED3F526D94B8C00CBF8F6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B26ED3F826D94BB200CBF8F6 /* FirestoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
+		B26ED3F926D94BB200CBF8F6 /* CommandDetailsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandDetailsResponse.swift; sourceTree = "<group>"; };
+		B26ED3FA26D94BB200CBF8F6 /* CommandType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
+		B26ED3FE26D94BE200CBF8F6 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B26ED40026D94BF300CBF8F6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B26ED40126D94BF300CBF8F6 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B26ED40426D94C0D00CBF8F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B26ED40626D9599E00CBF8F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D5A32A6CE9998F9E61E5A857 /* Pods-ScanMe-Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe-Admin.release.xcconfig"; path = "Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin.release.xcconfig"; sourceTree = "<group>"; };
+		EF80B15E45D0B68B51D8354F /* Pods-ScanMe-Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanMe-Admin.debug.xcconfig"; path = "Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B27FADDBA73B297FD15261 /* Pods_ScanMe_Admin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4946145049043A2AF2C7CD5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF80B15E45D0B68B51D8354F /* Pods-ScanMe-Admin.debug.xcconfig */,
+				D5A32A6CE9998F9E61E5A857 /* Pods-ScanMe-Admin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B26ED3CA26D9486400CBF8F6 = {
 			isa = PBXGroup;
 			children = (
 				B26ED3D526D9486400CBF8F6 /* ScanMe-Admin */,
 				B26ED3D426D9486400CBF8F6 /* Products */,
+				4946145049043A2AF2C7CD5C /* Pods */,
+				C722292211E5A8BE79B73393 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +90,88 @@
 		B26ED3D526D9486400CBF8F6 /* ScanMe-Admin */ = {
 			isa = PBXGroup;
 			children = (
-				B26ED3D626D9486400CBF8F6 /* AppDelegate.swift */,
-				B26ED3D826D9486400CBF8F6 /* SceneDelegate.swift */,
-				B26ED3DA26D9486400CBF8F6 /* ViewController.swift */,
-				B26ED3DC26D9486400CBF8F6 /* Main.storyboard */,
-				B26ED3DF26D9486900CBF8F6 /* Assets.xcassets */,
-				B26ED3E126D9486900CBF8F6 /* LaunchScreen.storyboard */,
-				B26ED3E426D9486900CBF8F6 /* Info.plist */,
+				B26ED3ED26D94A3F00CBF8F6 /* App */,
+				B26ED3EE26D94A4500CBF8F6 /* Extensions */,
+				B26ED3EC26D94A3300CBF8F6 /* Managers */,
+				B26ED3EA26D94A1A00CBF8F6 /* Models */,
+				B26ED3EF26D94A5800CBF8F6 /* Scenes */,
+				B26ED3F126D94A6900CBF8F6 /* Supporting files */,
 			);
 			path = "ScanMe-Admin";
+			sourceTree = "<group>";
+		};
+		B26ED3EA26D94A1A00CBF8F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED3F926D94BB200CBF8F6 /* CommandDetailsResponse.swift */,
+				B26ED3FA26D94BB200CBF8F6 /* CommandType.swift */,
+				B26ED3F826D94BB200CBF8F6 /* FirestoreError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B26ED3EC26D94A3300CBF8F6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED3F426D94B8C00CBF8F6 /* CommandManager.swift */,
+				B26ED3F526D94B8C00CBF8F6 /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B26ED3ED26D94A3F00CBF8F6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED3E126D9486900CBF8F6 /* LaunchScreen.storyboard */,
+				B26ED3D826D9486400CBF8F6 /* SceneDelegate.swift */,
+				B26ED3D626D9486400CBF8F6 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B26ED3EE26D94A4500CBF8F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED3F226D94AC600CBF8F6 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B26ED3EF26D94A5800CBF8F6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED40626D9599E00CBF8F6 /* Main.storyboard */,
+				B26ED3FE26D94BE200CBF8F6 /* MainCoordinator.swift */,
+				B26ED3F026D94A5E00CBF8F6 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B26ED3F026D94A5E00CBF8F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED40026D94BF300CBF8F6 /* HomeViewController.swift */,
+				B26ED40126D94BF300CBF8F6 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B26ED3F126D94A6900CBF8F6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				B26ED40426D94C0D00CBF8F6 /* Constants.swift */,
+				B26ED3DF26D9486900CBF8F6 /* Assets.xcassets */,
+				B26ED3E426D9486900CBF8F6 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		C722292211E5A8BE79B73393 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C8BC1D44EC920E247BBB213 /* Pods_ScanMe_Admin.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B26ED3E726D9486900CBF8F6 /* Build configuration list for PBXNativeTarget "ScanMe-Admin" */;
 			buildPhases = (
+				DF414565CF7631D2D8786867 /* [CP] Check Pods Manifest.lock */,
 				B26ED3CF26D9486400CBF8F6 /* Sources */,
 				B26ED3D026D9486400CBF8F6 /* Frameworks */,
 				B26ED3D126D9486400CBF8F6 /* Resources */,
+				1ECF03D1E9EF8F23BC74C392 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,36 +233,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26ED40726D9599E00CBF8F6 /* Main.storyboard in Resources */,
 				B26ED3E326D9486900CBF8F6 /* LaunchScreen.storyboard in Resources */,
 				B26ED3E026D9486900CBF8F6 /* Assets.xcassets in Resources */,
-				B26ED3DE26D9486400CBF8F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ECF03D1E9EF8F23BC74C392 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScanMe-Admin/Pods-ScanMe-Admin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF414565CF7631D2D8786867 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanMe-Admin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B26ED3CF26D9486400CBF8F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26ED3DB26D9486400CBF8F6 /* ViewController.swift in Sources */,
 				B26ED3D726D9486400CBF8F6 /* AppDelegate.swift in Sources */,
+				B26ED40326D94BF300CBF8F6 /* HomeViewModel.swift in Sources */,
+				B26ED3F726D94B8C00CBF8F6 /* DataManager.swift in Sources */,
+				B26ED3FB26D94BB200CBF8F6 /* FirestoreError.swift in Sources */,
+				B26ED3F626D94B8C00CBF8F6 /* CommandManager.swift in Sources */,
 				B26ED3D926D9486400CBF8F6 /* SceneDelegate.swift in Sources */,
+				B26ED40226D94BF300CBF8F6 /* HomeViewController.swift in Sources */,
+				B26ED3FD26D94BB200CBF8F6 /* CommandType.swift in Sources */,
+				B26ED3F326D94AC600CBF8F6 /* UIViewController.swift in Sources */,
+				B26ED3FF26D94BE200CBF8F6 /* MainCoordinator.swift in Sources */,
+				B26ED3FC26D94BB200CBF8F6 /* CommandDetailsResponse.swift in Sources */,
+				B26ED40526D94C0D00CBF8F6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B26ED3DC26D9486400CBF8F6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B26ED3DD26D9486400CBF8F6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B26ED3E126D9486900CBF8F6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,12 +435,14 @@
 		};
 		B26ED3E826D9486900CBF8F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF80B15E45D0B68B51D8354F /* Pods-ScanMe-Admin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
-				INFOPLIST_FILE = "ScanMe-Admin/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ScanMe-Admin/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +450,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "lovemyiot.ScanMe-Admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B26ED3E926D9486900CBF8F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A32A6CE9998F9E61E5A857 /* Pods-ScanMe-Admin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76Y8JYYXLJ;
-				INFOPLIST_FILE = "ScanMe-Admin/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ScanMe-Admin/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "lovemyiot.ScanMe-Admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
