@@ -9,7 +9,8 @@ import UIKit
 import CoreNFC
 
 class HomeViewController: UIViewController {
-    @IBOutlet private weak var detectButton: UIButton!
+    @IBOutlet private weak var readButton: UIButton!
+    @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
     var session: NFCTagReaderSession?
@@ -33,21 +34,26 @@ class HomeViewController: UIViewController {
     
     private func setupView() {
         navigationController?.setNavigationBarHidden(true, animated: false)
-        detectButton.layer.cornerRadius = 6
+        readButton.layer.cornerRadius = 6
+        saveButton.layer.cornerRadius = 6
         activityIndicator.hidesWhenStopped = true
     }
     
     private func checkNFCAvailability() {
         if !NFCTagReaderSession.readingAvailable {
-            detectButton.isEnabled = false
+            readButton.isEnabled = false
             showAlert(title: DescriptionKeys.scanningNotSupportedTitle, message: DescriptionKeys.scanningNotSupported)
         }
     }
     
-    @IBAction func detectPressed(_ sender: UIButton) {
+    @IBAction func readPressed(_ sender: UIButton) {
         session = NFCTagReaderSession(pollingOption: [.iso14443], delegate: self)
         session?.alertMessage = DescriptionKeys.sessionAlert
         session?.begin()
+    }
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+        viewModel.goToSaveCommand()
     }
 }
 

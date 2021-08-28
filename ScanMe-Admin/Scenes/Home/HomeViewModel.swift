@@ -19,6 +19,10 @@ class HomeViewModel: NSObject {
     init(router: UnownedRouter<MainRoute>) {
         self.router = router
     }
+    
+    func goToSaveCommand() {
+        router.trigger(.saveCommand)
+    }
 
     func fetchCommand(for identifier: String, completion: @escaping (CommandDetailsResponse) -> Void) {
         DataManager.shared.fetchCommand(for: identifier, from: FirestoreKeys.tagsCollection) {
