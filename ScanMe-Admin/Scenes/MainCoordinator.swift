@@ -10,7 +10,7 @@ import XCoordinator
 
 enum MainRoute: Route {
     case home
-    case saveCommand
+    case saveCommand(identifiers: [String])
     case back
 }
 
@@ -27,9 +27,9 @@ class MainCoordinator: NavigationCoordinator<MainRoute> {
             viewController.viewModel = HomeViewModel(router: unownedRouter)
             return .push(viewController)
             
-        case .saveCommand:
+        case let .saveCommand(identifiers):
             let viewController: SaveCommandViewController = SaveCommandViewController.instantiate()
-            viewController.viewModel = SaveCommandViewModel(router: unownedRouter)
+            viewController.viewModel = SaveCommandViewModel(router: unownedRouter, identifiers: identifiers)
             return .push(viewController)
             
         case .back:

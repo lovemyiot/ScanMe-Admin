@@ -21,7 +21,7 @@ struct Condition: Codable {
     let coordinates: GeoPoint?
     let radius: Int?
     
-    enum ConditionType: String, Codable {
+    enum ConditionType: String, Codable, CaseIterable {
         case time = "time"
         case location = "location"
     }

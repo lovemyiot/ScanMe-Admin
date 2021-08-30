@@ -12,6 +12,7 @@ import NetworkExtension
 
 class HomeViewModel: NSObject {
     private let router: UnownedRouter<MainRoute>
+    var identifiers: [String] = []
 
     var onTextMessage: ((MFMessageComposeViewController) -> Void)?
     var onAlert: ((String, String) -> Void)?
@@ -20,8 +21,12 @@ class HomeViewModel: NSObject {
         self.router = router
     }
     
+    func resetData() {
+        identifiers = []
+    }
+    
     func goToSaveCommand() {
-        router.trigger(.saveCommand)
+        router.trigger(.saveCommand(identifiers: identifiers))
     }
 
     func fetchCommand(for identifier: String, completion: @escaping (CommandDetailsResponse) -> Void) {

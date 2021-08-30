@@ -16,7 +16,7 @@ class DataManager {
         self.database = Firestore.firestore()
     }
     
-    func fetchCommand(for identifier: String, from collectionName: String,completion: @escaping (Result<CommandDetailsResponse, FirestoreError>) -> Void) {
+    func fetchCommand(for identifier: String, from collectionName: String, completion: @escaping (Result<CommandDetailsResponse, FirestoreError>) -> Void) {
         let documentReference = database.collection(collectionName).document(identifier)
         documentReference.getDocument { documentSnapshot, error in
             let result = Result {
@@ -35,20 +35,16 @@ class DataManager {
         }
     }
     
-    func addElement(collectionName: String, identifier: String) {
-        let collection = database.collection(collectionName)
-        var numberOfDocuments = 0
-        collection.getDocuments { snapshot, error in
-            if error != nil {
-                print("Error fetching documents from Firestore: \(error!.localizedDescription).")
-            }
-            guard let count = snapshot?.documents.count else {
-                print("No documents found in Firestore.")
-                return
-            }
-            numberOfDocuments = count
-            let documentReference = collection.document(identifier)
-            documentReference.setData(["commandId" : numberOfDocuments + 1])
+    func addCommand(command: CommandDetailsResponse, for identifier: String, in collectionName: String, completion: @escaping (Result<Void, Error>)-> Void) {
+        let documentReference = database.collection(collectionName).document(identifier)
+        let result = Result {
+            try documentReference.setData(from: command)
+        }
+        switch result {
+        case .success():
+            completion(.success(()))
+        case .failure(let error):
+            completion(.failure(error))
         }
     }
 }

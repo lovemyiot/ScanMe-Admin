@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -65,16 +66,28 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I41-7K-RPF">
+                                <rect key="frame" x="347" y="50" width="47" height="31"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7JF-9q-CYX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3rz-zI-wNf" secondAttribute="bottom" constant="160" id="18B-4y-2mZ"/>
                             <constraint firstItem="tAd-aJ-iem" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="35G-Zf-R3L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I41-7K-RPF" secondAttribute="trailing" constant="20" id="BA1-lw-nCy"/>
                             <constraint firstItem="F5z-uO-Dgi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DRZ-kZ-Xdg"/>
                             <constraint firstItem="NHF-vY-ZUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="G5s-4g-X5v"/>
                             <constraint firstAttribute="trailing" secondItem="F5z-uO-Dgi" secondAttribute="trailing" id="RdM-7O-2h2"/>
                             <constraint firstItem="F5z-uO-Dgi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X06-G1-L0c"/>
+                            <constraint firstItem="I41-7K-RPF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="aV9-Xc-Nyq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tAd-aJ-iem" secondAttribute="trailing" constant="50" id="bX7-us-mkZ"/>
                             <constraint firstItem="3rz-zI-wNf" firstAttribute="top" secondItem="NHF-vY-ZUf" secondAttribute="bottom" constant="40" id="cNE-jO-wYz"/>
                             <constraint firstItem="kyM-ty-JO8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dvu-We-Ey0"/>
@@ -91,6 +104,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="kyM-ty-JO8" id="KZR-y2-m3b"/>
+                        <outlet property="doneButton" destination="I41-7K-RPF" id="x8V-PR-YtY"/>
                         <outlet property="readButton" destination="NHF-vY-ZUf" id="PQn-0a-QuA"/>
                         <outlet property="saveButton" destination="3rz-zI-wNf" id="WB6-fj-YcR"/>
                     </connections>
@@ -126,11 +140,11 @@
                                     <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x6M-Jc-GCQ"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR6-re-3Oj">
-                                <rect key="frame" x="10" y="54" width="394" height="678"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gR6-re-3Oj">
+                                <rect key="frame" x="10" y="94.5" width="394" height="637.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TV-n1-LnQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="693"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="738"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Command 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie1-gx-Lyb">
                                                 <rect key="frame" x="20" y="15" width="111" height="21"/>
@@ -309,7 +323,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jul-c0-0Zc">
-                                                <rect key="frame" x="40" y="478" width="314" height="215"/>
+                                                <rect key="frame" x="40" y="478" width="314" height="260"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4P-KL-DSD">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
@@ -341,7 +355,7 @@
                                                         <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coordinates" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GdC-TM-GV1">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GdC-TM-GV1">
                                                         <rect key="frame" x="0.0" y="135" width="314" height="35"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -351,8 +365,18 @@
                                                         <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Radius" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTq-ER-zHC">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fn9-J3-SnB">
                                                         <rect key="frame" x="0.0" y="180" width="314" height="35"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="Pho-g8-mez"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Radius" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTq-ER-zHC">
+                                                        <rect key="frame" x="0.0" y="225" width="314" height="35"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="SKE-9X-oeu"/>
@@ -394,42 +418,75 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="cd0-pu-AWr"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="PWV-V5-M6O"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G67-eo-gUK">
+                                <rect key="frame" x="20" y="50" width="56.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Back">
+                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="DYN-QO-lpN" eventType="touchUpInside" id="eob-Lo-woF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E8h-5D-iry"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gR6-re-3Oj" firstAttribute="top" secondItem="E8h-5D-iry" secondAttribute="top" constant="10" id="6Hx-aQ-rkJ"/>
                             <constraint firstItem="w8D-cV-fha" firstAttribute="top" secondItem="gR6-re-3Oj" secondAttribute="bottom" constant="30" id="AFe-J7-euY"/>
                             <constraint firstItem="E8h-5D-iry" firstAttribute="trailing" secondItem="w8D-cV-fha" secondAttribute="trailing" constant="30" id="BU2-fJ-StU"/>
                             <constraint firstAttribute="trailing" secondItem="xXs-Gm-Ll0" secondAttribute="trailing" id="Cho-kt-ObC"/>
                             <constraint firstItem="E8h-5D-iry" firstAttribute="bottom" secondItem="w8D-cV-fha" secondAttribute="bottom" constant="50" id="bJK-WY-p55"/>
+                            <constraint firstItem="G67-eo-gUK" firstAttribute="leading" secondItem="E8h-5D-iry" secondAttribute="leading" constant="20" id="bqN-Dt-m81"/>
                             <constraint firstItem="xXs-Gm-Ll0" firstAttribute="top" secondItem="W1V-YI-oW4" secondAttribute="top" id="cPI-jR-tF7"/>
                             <constraint firstItem="w8D-cV-fha" firstAttribute="leading" secondItem="E8h-5D-iry" secondAttribute="leading" constant="30" id="cS4-gW-hot"/>
                             <constraint firstItem="E8h-5D-iry" firstAttribute="trailing" secondItem="gR6-re-3Oj" secondAttribute="trailing" constant="10" id="f7r-Sl-fD7"/>
                             <constraint firstItem="xXs-Gm-Ll0" firstAttribute="leading" secondItem="W1V-YI-oW4" secondAttribute="leading" id="fqi-IT-8i5"/>
+                            <constraint firstItem="G67-eo-gUK" firstAttribute="top" secondItem="E8h-5D-iry" secondAttribute="top" constant="6" id="nOq-GQ-PjR"/>
+                            <constraint firstItem="gR6-re-3Oj" firstAttribute="top" secondItem="G67-eo-gUK" secondAttribute="bottom" constant="25" id="nwm-py-iB1"/>
                             <constraint firstItem="gR6-re-3Oj" firstAttribute="leading" secondItem="E8h-5D-iry" secondAttribute="leading" constant="10" id="sAj-yy-SPz"/>
                             <constraint firstAttribute="bottom" secondItem="xXs-Gm-Ll0" secondAttribute="bottom" id="tjB-QI-hei"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="conditionType" destination="n4P-KL-DSD" id="bVv-7L-TMw"/>
-                        <outlet property="coordinates" destination="GdC-TM-GV1" id="jv0-zV-2zy"/>
-                        <outlet property="endTime" destination="yoV-20-wu6" id="tLX-vD-Boi"/>
-                        <outlet property="firstCommandId" destination="vml-NN-5Qx" id="fCI-hz-pSj"/>
-                        <outlet property="firstCommandMessage" destination="lXu-j7-UMP" id="mWq-Um-qdY"/>
-                        <outlet property="firstCommandPhoneNumber" destination="NNg-zw-Gsb" id="cCN-7f-QiJ"/>
-                        <outlet property="firstCommandSsid" destination="Q1t-zj-5PJ" id="Brb-dY-fqk"/>
-                        <outlet property="firstCommandUrl" destination="YnM-tJ-rHy" id="jP3-n9-rm5"/>
-                        <outlet property="firstCommandWifiPassword" destination="FBc-KI-ysx" id="tTg-GP-J1T"/>
-                        <outlet property="radius" destination="bTq-ER-zHC" id="fmv-ko-Rqj"/>
+                        <outlet property="conditionTypeTextField" destination="n4P-KL-DSD" id="bVv-7L-TMw"/>
+                        <outlet property="endTimeTextField" destination="yoV-20-wu6" id="tLX-vD-Boi"/>
+                        <outlet property="firstCommandIdTextField" destination="vml-NN-5Qx" id="fCI-hz-pSj"/>
+                        <outlet property="firstCommandMessageTextField" destination="lXu-j7-UMP" id="mWq-Um-qdY"/>
+                        <outlet property="firstCommandPhoneNumberTextField" destination="NNg-zw-Gsb" id="cCN-7f-QiJ"/>
+                        <outlet property="firstCommandSsidTextField" destination="Q1t-zj-5PJ" id="Brb-dY-fqk"/>
+                        <outlet property="firstCommandUrlTextField" destination="YnM-tJ-rHy" id="jP3-n9-rm5"/>
+                        <outlet property="firstCommandWifiPasswordTextField" destination="FBc-KI-ysx" id="tTg-GP-J1T"/>
+                        <outlet property="latitudeTextField" destination="GdC-TM-GV1" id="jv0-zV-2zy"/>
+                        <outlet property="longitudeTextField" destination="Fn9-J3-SnB" id="0dk-9f-d6R"/>
+                        <outlet property="radiusTextField" destination="bTq-ER-zHC" id="fmv-ko-Rqj"/>
                         <outlet property="saveButton" destination="w8D-cV-fha" id="AIh-9a-LXk"/>
-                        <outlet property="secondCommandId" destination="7yO-YK-w3j" id="W82-go-BNI"/>
-                        <outlet property="secondCommandMessage" destination="BFl-zn-Ecx" id="t8D-nR-dIm"/>
-                        <outlet property="secondCommandPhoneNumber" destination="8NW-Gp-P7X" id="gi6-cu-tlO"/>
-                        <outlet property="secondCommandSsid" destination="aqU-3E-C2h" id="4Q3-Wk-QOW"/>
-                        <outlet property="secondCommandUrl" destination="onn-zf-s2C" id="jNi-rJ-exd"/>
-                        <outlet property="secondCommandWifiPassword" destination="1QD-ow-o5x" id="VEX-Dq-kFw"/>
-                        <outlet property="startTime" destination="RWH-yq-Usu" id="bL6-MR-Zj6"/>
+                        <outlet property="scrollView" destination="gR6-re-3Oj" id="oGD-dy-5K6"/>
+                        <outlet property="secondCommandIdTextField" destination="7yO-YK-w3j" id="W82-go-BNI"/>
+                        <outlet property="secondCommandMessageTextField" destination="BFl-zn-Ecx" id="t8D-nR-dIm"/>
+                        <outlet property="secondCommandPhoneNumberTextField" destination="8NW-Gp-P7X" id="gi6-cu-tlO"/>
+                        <outlet property="secondCommandSsidTextField" destination="aqU-3E-C2h" id="4Q3-Wk-QOW"/>
+                        <outlet property="secondCommandUrlTextField" destination="onn-zf-s2C" id="jNi-rJ-exd"/>
+                        <outlet property="secondCommandWifiPasswordTextField" destination="1QD-ow-o5x" id="VEX-Dq-kFw"/>
+                        <outlet property="startTimeTextField" destination="RWH-yq-Usu" id="bL6-MR-Zj6"/>
+                        <outletCollection property="allTextFields" destination="vml-NN-5Qx" collectionClass="NSMutableArray" id="PDV-qa-yXp"/>
+                        <outletCollection property="allTextFields" destination="YnM-tJ-rHy" collectionClass="NSMutableArray" id="Ta7-fb-aQ8"/>
+                        <outletCollection property="allTextFields" destination="NNg-zw-Gsb" collectionClass="NSMutableArray" id="4hL-hA-rWl"/>
+                        <outletCollection property="allTextFields" destination="Q1t-zj-5PJ" collectionClass="NSMutableArray" id="IL1-pa-R8R"/>
+                        <outletCollection property="allTextFields" destination="lXu-j7-UMP" collectionClass="NSMutableArray" id="YjP-jv-1dz"/>
+                        <outletCollection property="allTextFields" destination="FBc-KI-ysx" collectionClass="NSMutableArray" id="CUI-lA-3W4"/>
+                        <outletCollection property="allTextFields" destination="7yO-YK-w3j" collectionClass="NSMutableArray" id="4NQ-fE-Ju5"/>
+                        <outletCollection property="allTextFields" destination="onn-zf-s2C" collectionClass="NSMutableArray" id="DaE-2j-pD2"/>
+                        <outletCollection property="allTextFields" destination="8NW-Gp-P7X" collectionClass="NSMutableArray" id="tNB-Hp-Rn9"/>
+                        <outletCollection property="allTextFields" destination="aqU-3E-C2h" collectionClass="NSMutableArray" id="jJY-fW-awn"/>
+                        <outletCollection property="allTextFields" destination="BFl-zn-Ecx" collectionClass="NSMutableArray" id="7GM-O1-iT5"/>
+                        <outletCollection property="allTextFields" destination="1QD-ow-o5x" collectionClass="NSMutableArray" id="cWK-nW-whL"/>
+                        <outletCollection property="allTextFields" destination="n4P-KL-DSD" collectionClass="NSMutableArray" id="sbL-jL-CAc"/>
+                        <outletCollection property="allTextFields" destination="RWH-yq-Usu" collectionClass="NSMutableArray" id="dQk-q3-AtV"/>
+                        <outletCollection property="allTextFields" destination="yoV-20-wu6" collectionClass="NSMutableArray" id="FQn-gX-PdV"/>
+                        <outletCollection property="allTextFields" destination="GdC-TM-GV1" collectionClass="NSMutableArray" id="1ka-3k-Hp2"/>
+                        <outletCollection property="allTextFields" destination="bTq-ER-zHC" collectionClass="NSMutableArray" id="m00-zD-TQD"/>
+                        <outletCollection property="allTextFields" destination="Fn9-J3-SnB" collectionClass="NSMutableArray" id="mVE-D7-WF2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IId-9f-tGz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -439,6 +496,7 @@
     </scenes>
     <resources>
         <image name="backgroundBlue" width="1024" height="1024"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

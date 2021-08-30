@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         if window != nil {
+//            window!.overrideUserInterfaceStyle = .light
             router.setRoot(for: window!)
         }
     }

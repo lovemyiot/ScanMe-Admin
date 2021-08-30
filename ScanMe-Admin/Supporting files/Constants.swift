@@ -38,6 +38,14 @@ enum DescriptionKeys {
     // MARK: - Running command error
     static let wifiError = "WiFi connection error"
     static let couldNotConnectToWifi = "Could not connect to WiFi. Please try again."
+    
+    // MARK: - Saving command
+    static let numberOfTags = "Number of tags to save"
+    static let saveOneOrMore = "Do you want to save only one tag at once or more ?"
+    static let writingErrorTitle = "Error writing command"
+    static let writingError = "Could not write data to Firestore."
+    static let writingSuccessTitle = "Success writing command"
+    static let writingSuccess = "Successfully wrote data to Firestore!"
 }
 
 enum FirestoreKeys {
