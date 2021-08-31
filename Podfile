@@ -6,5 +6,6 @@ target 'ScanMe-Admin' do
   pod 'XCoordinator', '~> 2.0'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '8.4.0-beta'
+  pod 'Firebase/Auth'
   
 end

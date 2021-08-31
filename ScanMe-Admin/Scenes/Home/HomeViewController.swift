@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreNFC
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     @IBOutlet private weak var readButton: UIButton!
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController {
         checkNFCAvailability()
         setupView()
         CommandManager.shared.locationManager.requestWhenInUseAuthorization()
+        firebaseSignIn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +44,14 @@ class HomeViewController: UIViewController {
         readButton.isEnabled = true
         saveButton.isEnabled = true
         viewModel.resetData()
+    }
+    
+    private func firebaseSignIn() {
+        Auth.auth().signInAnonymously { [weak self] authResult, error in
+            if error != nil {
+                self?.showAlert(title: DescriptionKeys.authErrorTitle, message: DescriptionKeys.authError)
+            }
+        }
     }
     
     private func setupView() {

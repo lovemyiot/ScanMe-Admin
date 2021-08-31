@@ -46,6 +46,10 @@ enum DescriptionKeys {
     static let writingError = "Could not write data to Firestore."
     static let writingSuccessTitle = "Success writing command"
     static let writingSuccess = "Successfully wrote data to Firestore!"
+    
+    // MARK: - Firebase auth
+    static let authErrorTitle = "Authentication error"
+    static let authError = "Could not authenticate to Firebase."
 }
 
 enum FirestoreKeys {
