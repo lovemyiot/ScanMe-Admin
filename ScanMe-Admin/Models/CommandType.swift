@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 enum CommandType: Equatable {
     case flashlight
@@ -14,7 +15,8 @@ enum CommandType: Equatable {
     case call(phoneNumber: String?)
     case wifi(ssid: String?, password: String?)
     case unsupported
-    
+    case openMap(coordinates: GeoPoint?, destination: String?)
+
     var title: String {
         switch self {
         case .flashlight:
@@ -29,6 +31,8 @@ enum CommandType: Equatable {
             return DescriptionKeys.unsupported
         case .wifi:
             return DescriptionKeys.wifi
+        case .openMap:
+            return DescriptionKeys.openMap
         }
     }
 }

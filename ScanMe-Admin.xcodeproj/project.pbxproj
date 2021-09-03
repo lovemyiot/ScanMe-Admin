@@ -101,10 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				B26ED40A26D95E3500CBF8F6 /* ScanMe-Admin.entitlements */,
+				B26ED3EA26D94A1A00CBF8F6 /* Models */,
+				B26ED3EC26D94A3300CBF8F6 /* Managers */,
 				B26ED3ED26D94A3F00CBF8F6 /* App */,
 				B26ED3EE26D94A4500CBF8F6 /* Extensions */,
-				B26ED3EC26D94A3300CBF8F6 /* Managers */,
-				B26ED3EA26D94A1A00CBF8F6 /* Models */,
 				B26ED3EF26D94A5800CBF8F6 /* Scenes */,
 				B26ED3F126D94A6900CBF8F6 /* Supporting files */,
 			);

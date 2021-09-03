@@ -19,6 +19,9 @@ class SaveCommandViewController: UIViewController {
     @IBOutlet private weak var firstCommandUrlTextField: UITextField!
     @IBOutlet private weak var firstCommandSsidTextField: UITextField!
     @IBOutlet private weak var firstCommandWifiPasswordTextField: UITextField!
+    @IBOutlet private weak var firstCommandLatitudeTextField: UITextField!
+    @IBOutlet private weak var firstCommandLongitudeTextField: UITextField!
+    @IBOutlet private weak var firstCommandDestinationTextField: UITextField!
     
     @IBOutlet private weak var secondCommandIdTextField: UITextField!
     @IBOutlet private weak var secondCommandPhoneNumberTextField: UITextField!
@@ -26,6 +29,9 @@ class SaveCommandViewController: UIViewController {
     @IBOutlet private weak var secondCommandUrlTextField: UITextField!
     @IBOutlet private weak var secondCommandSsidTextField: UITextField!
     @IBOutlet private weak var secondCommandWifiPasswordTextField: UITextField!
+    @IBOutlet private weak var secondCommandLatitudeTextField: UITextField!
+    @IBOutlet private weak var secondCommandLongitudeTextField: UITextField!
+    @IBOutlet private weak var secondCommandDestinationTextField: UITextField!
     
     @IBOutlet private weak var conditionTypeTextField: UITextField!
     @IBOutlet private weak var startTimeTextField: UITextField!
@@ -81,7 +87,10 @@ class SaveCommandViewController: UIViewController {
         [firstCommandIdTextField, secondCommandIdTextField, radiusTextField].forEach {
             $0?.keyboardType = .numberPad
         }
-        [latitudeTextField, longitudeTextField].forEach {
+        [firstCommandPhoneNumberTextField, secondCommandPhoneNumberTextField].forEach {
+            $0?.keyboardType = .phonePad
+        }
+        [latitudeTextField, longitudeTextField, firstCommandLatitudeTextField, firstCommandLongitudeTextField, secondCommandLatitudeTextField, secondCommandLongitudeTextField].forEach {
             $0?.keyboardType = .decimalPad
         }
         scrollView.overrideUserInterfaceStyle = .light
@@ -99,11 +108,19 @@ class SaveCommandViewController: UIViewController {
         let firstUrl = firstCommandUrlTextField.text ?? ""
         let firstSsid = firstCommandSsidTextField.text ?? ""
         let firstWifiPassword = firstCommandWifiPasswordTextField.text ?? ""
+        var firstCoordinates: GeoPoint?
+        if let latitude = Double(firstCommandLatitudeTextField.text ?? ""),
+           let longitude = Double(firstCommandLongitudeTextField.text ?? "") {
+            firstCoordinates = GeoPoint(latitude: latitude, longitude: longitude)
+        }
+        let firstDestination = firstCommandDestinationTextField.text ?? ""
         let firstArguments = Arguments(phoneNumber: firstPhoneNumber.isEmpty ? nil : firstPhoneNumber,
                                        message: firstMessage.isEmpty ? nil : firstMessage,
                                        url: firstUrl.isEmpty ? nil : firstUrl,
                                        ssid: firstSsid.isEmpty ? nil : firstSsid,
-                                       wifiPassword: firstWifiPassword.isEmpty ? nil : firstWifiPassword)
+                                       wifiPassword: firstWifiPassword.isEmpty ? nil : firstWifiPassword,
+                                       coordinates: firstCoordinates,
+                                       destinationName: firstDestination.isEmpty ? nil : firstDestination)
         let firstCommand = Command(commandId: safeFirstId, arguments: firstArguments)
         commands.append(firstCommand)
         
@@ -113,11 +130,19 @@ class SaveCommandViewController: UIViewController {
             let secondUrl = secondCommandUrlTextField.text ?? ""
             let secondSsid = secondCommandSsidTextField.text ?? ""
             let secondWifiPassword = secondCommandWifiPasswordTextField.text ?? ""
+            var secondCoordinates: GeoPoint?
+            if let latitude = Double(secondCommandLatitudeTextField.text ?? ""),
+               let longitude = Double(secondCommandLongitudeTextField.text ?? "") {
+                secondCoordinates = GeoPoint(latitude: latitude, longitude: longitude)
+            }
+            let secondDestination = secondCommandDestinationTextField.text ?? ""
             let secondArguments = Arguments(phoneNumber: secondPhoneNumber.isEmpty ? nil : secondPhoneNumber,
                                             message: secondMessage.isEmpty ? nil : secondMessage,
                                             url: secondUrl.isEmpty ? nil : secondUrl,
                                             ssid: secondSsid.isEmpty ? nil : secondSsid,
-                                            wifiPassword: secondWifiPassword.isEmpty ? nil : secondWifiPassword)
+                                            wifiPassword: secondWifiPassword.isEmpty ? nil : secondWifiPassword,
+                                            coordinates: secondCoordinates,
+                                            destinationName: secondDestination.isEmpty ? nil : secondDestination)
             let secondCommand = Command(commandId: safeSecondId, arguments: secondArguments)
             commands.append(secondCommand)
         }
@@ -130,9 +155,9 @@ class SaveCommandViewController: UIViewController {
             var radius: Int?
             let startTime = startTimeTextField.text ?? ""
             let endTime = endTimeTextField.text ?? ""
-            if let latitude = latitudeTextField.text, let longitude = longitudeTextField.text,
-               let latitudeDouble = Double(latitude), let longitudeDouble = Double(longitude) {
-                coordinates = GeoPoint(latitude: latitudeDouble, longitude: longitudeDouble)
+            if let latitude = Double(latitudeTextField.text ?? ""),
+               let longitude = Double(longitudeTextField.text ?? "") {
+                coordinates = GeoPoint(latitude: latitude, longitude: longitude)
             }
             if let radiusText = radiusTextField.text, let radiusInt = Int(radiusText) {
                 radius = radiusInt

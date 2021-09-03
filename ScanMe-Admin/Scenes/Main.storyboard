@@ -144,10 +144,10 @@
                                 <rect key="frame" x="10" y="94.5" width="394" height="637.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TV-n1-LnQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="738"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="933"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Command 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie1-gx-Lyb">
-                                                <rect key="frame" x="20" y="15" width="111" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary command" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie1-gx-Lyb">
+                                                <rect key="frame" x="20" y="15" width="176.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="7uo-mO-MFb"/>
                                                 </constraints>
@@ -155,8 +155,124 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Command 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-jF-CtE">
-                                                <rect key="frame" x="20" y="221" width="111" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(REQUIRED)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Va-2x-r5Z">
+                                                <rect key="frame" x="20" y="41" width="79.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="5kI-sR-Hks"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vjP-c1-HbP">
+                                                <rect key="frame" x="40" y="71" width="314" height="215"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EMf-sW-BuL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="215"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Command ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vml-NN-5Qx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="cmF-l3-lek"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-zw-Gsb">
+                                                                <rect key="frame" x="0.0" y="45" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="SoH-qV-Sge"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-zj-5PJ">
+                                                                <rect key="frame" x="0.0" y="90" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="ooc-zB-c1w"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Oi-cf-PAl">
+                                                                <rect key="frame" x="0.0" y="135" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="0rQ-FA-99u"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1T6-05-bGk">
+                                                                <rect key="frame" x="0.0" y="180" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="Dug-V1-0Qh"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZFa-Jo-irE">
+                                                        <rect key="frame" x="161" y="0.0" width="153" height="215"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YnM-tJ-rHy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="PvF-v9-DeQ"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXu-j7-UMP">
+                                                                <rect key="frame" x="0.0" y="45" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="vfF-Ov-0ar"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WiFi password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBc-KI-ysx">
+                                                                <rect key="frame" x="0.0" y="90" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="MOh-ur-FUR"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0h-hj-1sa">
+                                                                <rect key="frame" x="0.0" y="135" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="8eE-j0-vpN"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrg-gL-hH7">
+                                                                <rect key="frame" x="0.0" y="180" width="153" height="35"/>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditional command" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-jF-CtE">
+                                                <rect key="frame" x="20" y="316" width="218.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Zfn-fi-RdC"/>
                                                 </constraints>
@@ -164,11 +280,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(OPTIONAL)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6G-px-wP1">
+                                                <rect key="frame" x="20" y="342" width="78.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="UEG-5s-wL2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ADt-Dt-Q6g">
-                                                <rect key="frame" x="40" y="272" width="314" height="125"/>
+                                                <rect key="frame" x="40" y="372" width="314" height="215"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-un-q5O">
-                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="125"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="215"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Command ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yO-YK-w3j">
                                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
@@ -190,11 +315,31 @@
                                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFl-zn-Ecx">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqU-3E-C2h">
                                                                 <rect key="frame" x="0.0" y="90" width="153" height="35"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="nBP-0i-HKr"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="LJZ-5r-pmY"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TqV-1c-V2d">
+                                                                <rect key="frame" x="0.0" y="135" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="0wF-o4-mDU"/>
+                                                                </constraints>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-c2-kii">
+                                                                <rect key="frame" x="0.0" y="180" width="153" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="XIl-6J-UTp"/>
                                                                 </constraints>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
@@ -203,7 +348,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sh5-eK-BFN">
-                                                        <rect key="frame" x="161" y="0.0" width="153" height="125"/>
+                                                        <rect key="frame" x="161" y="0.0" width="153" height="215"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="onn-zf-s2C">
                                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
@@ -215,11 +360,11 @@
                                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqU-3E-C2h">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFl-zn-Ecx">
                                                                 <rect key="frame" x="0.0" y="45" width="153" height="35"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="LJZ-5r-pmY"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="nBP-0i-HKr"/>
                                                                 </constraints>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
@@ -235,86 +380,25 @@
                                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vjP-c1-HbP">
-                                                <rect key="frame" x="40" y="66" width="314" height="125"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EMf-sW-BuL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="125"/>
-                                                        <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Command ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vml-NN-5Qx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXy-74-jAB">
+                                                                <rect key="frame" x="0.0" y="135" width="153" height="35"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="cmF-l3-lek"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-zw-Gsb">
-                                                                <rect key="frame" x="0.0" y="45" width="153" height="35"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="SoH-qV-Sge"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="9IK-Kx-BJt"/>
                                                                 </constraints>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXu-j7-UMP">
-                                                                <rect key="frame" x="0.0" y="90" width="153" height="35"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="vfF-Ov-0ar"/>
-                                                                </constraints>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZFa-Jo-irE">
-                                                        <rect key="frame" x="161" y="0.0" width="153" height="125"/>
-                                                        <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YnM-tJ-rHy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="PvF-v9-DeQ"/>
-                                                                </constraints>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-zj-5PJ">
-                                                                <rect key="frame" x="0.0" y="45" width="153" height="35"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="ooc-zB-c1w"/>
-                                                                </constraints>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WiFi password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBc-KI-ysx">
-                                                                <rect key="frame" x="0.0" y="90" width="153" height="35"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="EvK-yw-6Xu"/>
-                                                                </constraints>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exp-aw-4UH">
+                                                                <rect key="frame" x="0.0" y="180" width="153" height="35"/>
+                                                            </view>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHu-iz-hAT">
-                                                <rect key="frame" x="20" y="427" width="101.5" height="21"/>
+                                                <rect key="frame" x="20" y="617" width="101.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="b1l-Gm-UDI"/>
                                                 </constraints>
@@ -322,8 +406,17 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(REQUIRED FOR CONDITIONAL COMMAND)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIu-ic-JYu">
+                                                <rect key="frame" x="20" y="643" width="281" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="1JX-vs-z0R"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jul-c0-0Zc">
-                                                <rect key="frame" x="40" y="478" width="314" height="260"/>
+                                                <rect key="frame" x="40" y="673" width="314" height="260"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4P-KL-DSD">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
@@ -393,17 +486,23 @@
                                             <constraint firstItem="ADt-Dt-Q6g" firstAttribute="leading" secondItem="4TV-n1-LnQ" secondAttribute="leading" constant="40" id="4cF-6N-scG"/>
                                             <constraint firstItem="tIV-jF-CtE" firstAttribute="leading" secondItem="4TV-n1-LnQ" secondAttribute="leading" constant="20" id="6gt-OB-zRD"/>
                                             <constraint firstItem="tIV-jF-CtE" firstAttribute="top" secondItem="vjP-c1-HbP" secondAttribute="bottom" constant="30" id="93U-hU-cb7"/>
-                                            <constraint firstItem="ADt-Dt-Q6g" firstAttribute="top" secondItem="tIV-jF-CtE" secondAttribute="bottom" constant="30" id="BMp-Zp-cNx"/>
+                                            <constraint firstItem="nIu-ic-JYu" firstAttribute="leading" secondItem="fHu-iz-hAT" secondAttribute="leading" id="C1n-Uw-7ZZ"/>
                                             <constraint firstItem="fHu-iz-hAT" firstAttribute="top" secondItem="ADt-Dt-Q6g" secondAttribute="bottom" constant="30" id="EH8-CW-cDo"/>
+                                            <constraint firstItem="C6G-px-wP1" firstAttribute="top" secondItem="tIV-jF-CtE" secondAttribute="bottom" constant="5" id="Jbw-jE-5yo"/>
+                                            <constraint firstItem="jul-c0-0Zc" firstAttribute="top" secondItem="nIu-ic-JYu" secondAttribute="bottom" constant="10" id="Jee-h5-ImM"/>
+                                            <constraint firstItem="5Va-2x-r5Z" firstAttribute="leading" secondItem="ie1-gx-Lyb" secondAttribute="leading" id="NIz-aN-KU9"/>
                                             <constraint firstItem="fHu-iz-hAT" firstAttribute="leading" secondItem="4TV-n1-LnQ" secondAttribute="leading" constant="20" id="Pc6-JG-HGN"/>
+                                            <constraint firstItem="ADt-Dt-Q6g" firstAttribute="top" secondItem="C6G-px-wP1" secondAttribute="bottom" constant="10" id="VD0-Mj-Nej"/>
+                                            <constraint firstItem="vjP-c1-HbP" firstAttribute="top" secondItem="5Va-2x-r5Z" secondAttribute="bottom" constant="10" id="dWa-xw-40B"/>
                                             <constraint firstItem="ie1-gx-Lyb" firstAttribute="leading" secondItem="4TV-n1-LnQ" secondAttribute="leading" constant="20" id="gOY-Uj-suz"/>
-                                            <constraint firstItem="vjP-c1-HbP" firstAttribute="top" secondItem="ie1-gx-Lyb" secondAttribute="bottom" constant="30" id="hsi-M9-9ZR"/>
+                                            <constraint firstItem="5Va-2x-r5Z" firstAttribute="top" secondItem="ie1-gx-Lyb" secondAttribute="bottom" constant="5" id="ifF-an-29t"/>
                                             <constraint firstItem="vjP-c1-HbP" firstAttribute="leading" secondItem="4TV-n1-LnQ" secondAttribute="leading" constant="40" id="jE8-D1-4vx"/>
+                                            <constraint firstItem="nIu-ic-JYu" firstAttribute="top" secondItem="fHu-iz-hAT" secondAttribute="bottom" constant="5" id="qgO-qo-fSA"/>
                                             <constraint firstAttribute="trailing" secondItem="ADt-Dt-Q6g" secondAttribute="trailing" constant="40" id="qmj-sx-Eh1"/>
                                             <constraint firstItem="jul-c0-0Zc" firstAttribute="leading" secondItem="4TV-n1-LnQ" secondAttribute="leading" constant="40" id="rOU-Ww-Knv"/>
                                             <constraint firstAttribute="trailing" secondItem="jul-c0-0Zc" secondAttribute="trailing" constant="40" id="vE9-8T-VoI"/>
+                                            <constraint firstItem="C6G-px-wP1" firstAttribute="leading" secondItem="tIV-jF-CtE" secondAttribute="leading" id="wau-um-7Nk"/>
                                             <constraint firstAttribute="bottom" secondItem="jul-c0-0Zc" secondAttribute="bottom" id="wgA-rj-Ukf"/>
-                                            <constraint firstItem="jul-c0-0Zc" firstAttribute="top" secondItem="fHu-iz-hAT" secondAttribute="bottom" constant="30" id="x2D-kr-F1d"/>
                                             <constraint firstAttribute="trailing" secondItem="vjP-c1-HbP" secondAttribute="trailing" constant="40" id="yLf-vm-I8A"/>
                                         </constraints>
                                     </view>
@@ -451,18 +550,24 @@
                     <connections>
                         <outlet property="conditionTypeTextField" destination="n4P-KL-DSD" id="bVv-7L-TMw"/>
                         <outlet property="endTimeTextField" destination="yoV-20-wu6" id="tLX-vD-Boi"/>
+                        <outlet property="firstCommandDestinationTextField" destination="1T6-05-bGk" id="w51-wv-Im8"/>
                         <outlet property="firstCommandIdTextField" destination="vml-NN-5Qx" id="fCI-hz-pSj"/>
+                        <outlet property="firstCommandLatitudeTextField" destination="4Oi-cf-PAl" id="J6E-Zw-drV"/>
+                        <outlet property="firstCommandLongitudeTextField" destination="I0h-hj-1sa" id="blk-ni-pS8"/>
                         <outlet property="firstCommandMessageTextField" destination="lXu-j7-UMP" id="mWq-Um-qdY"/>
                         <outlet property="firstCommandPhoneNumberTextField" destination="NNg-zw-Gsb" id="cCN-7f-QiJ"/>
                         <outlet property="firstCommandSsidTextField" destination="Q1t-zj-5PJ" id="Brb-dY-fqk"/>
                         <outlet property="firstCommandUrlTextField" destination="YnM-tJ-rHy" id="jP3-n9-rm5"/>
-                        <outlet property="firstCommandWifiPasswordTextField" destination="FBc-KI-ysx" id="tTg-GP-J1T"/>
+                        <outlet property="firstCommandWifiPasswordTextField" destination="FBc-KI-ysx" id="ZpI-Iz-JEN"/>
                         <outlet property="latitudeTextField" destination="GdC-TM-GV1" id="jv0-zV-2zy"/>
                         <outlet property="longitudeTextField" destination="Fn9-J3-SnB" id="0dk-9f-d6R"/>
                         <outlet property="radiusTextField" destination="bTq-ER-zHC" id="fmv-ko-Rqj"/>
                         <outlet property="saveButton" destination="w8D-cV-fha" id="AIh-9a-LXk"/>
                         <outlet property="scrollView" destination="gR6-re-3Oj" id="oGD-dy-5K6"/>
+                        <outlet property="secondCommandDestinationTextField" destination="bt4-c2-kii" id="UQP-g5-hP6"/>
                         <outlet property="secondCommandIdTextField" destination="7yO-YK-w3j" id="W82-go-BNI"/>
+                        <outlet property="secondCommandLatitudeTextField" destination="TqV-1c-V2d" id="sE5-c8-SzO"/>
+                        <outlet property="secondCommandLongitudeTextField" destination="AXy-74-jAB" id="9DT-Cg-ab7"/>
                         <outlet property="secondCommandMessageTextField" destination="BFl-zn-Ecx" id="t8D-nR-dIm"/>
                         <outlet property="secondCommandPhoneNumberTextField" destination="8NW-Gp-P7X" id="gi6-cu-tlO"/>
                         <outlet property="secondCommandSsidTextField" destination="aqU-3E-C2h" id="4Q3-Wk-QOW"/>
@@ -472,14 +577,10 @@
                         <outletCollection property="allTextFields" destination="vml-NN-5Qx" collectionClass="NSMutableArray" id="PDV-qa-yXp"/>
                         <outletCollection property="allTextFields" destination="YnM-tJ-rHy" collectionClass="NSMutableArray" id="Ta7-fb-aQ8"/>
                         <outletCollection property="allTextFields" destination="NNg-zw-Gsb" collectionClass="NSMutableArray" id="4hL-hA-rWl"/>
-                        <outletCollection property="allTextFields" destination="Q1t-zj-5PJ" collectionClass="NSMutableArray" id="IL1-pa-R8R"/>
-                        <outletCollection property="allTextFields" destination="lXu-j7-UMP" collectionClass="NSMutableArray" id="YjP-jv-1dz"/>
                         <outletCollection property="allTextFields" destination="FBc-KI-ysx" collectionClass="NSMutableArray" id="CUI-lA-3W4"/>
                         <outletCollection property="allTextFields" destination="7yO-YK-w3j" collectionClass="NSMutableArray" id="4NQ-fE-Ju5"/>
                         <outletCollection property="allTextFields" destination="onn-zf-s2C" collectionClass="NSMutableArray" id="DaE-2j-pD2"/>
                         <outletCollection property="allTextFields" destination="8NW-Gp-P7X" collectionClass="NSMutableArray" id="tNB-Hp-Rn9"/>
-                        <outletCollection property="allTextFields" destination="aqU-3E-C2h" collectionClass="NSMutableArray" id="jJY-fW-awn"/>
-                        <outletCollection property="allTextFields" destination="BFl-zn-Ecx" collectionClass="NSMutableArray" id="7GM-O1-iT5"/>
                         <outletCollection property="allTextFields" destination="1QD-ow-o5x" collectionClass="NSMutableArray" id="cWK-nW-whL"/>
                         <outletCollection property="allTextFields" destination="n4P-KL-DSD" collectionClass="NSMutableArray" id="sbL-jL-CAc"/>
                         <outletCollection property="allTextFields" destination="RWH-yq-Usu" collectionClass="NSMutableArray" id="dQk-q3-AtV"/>
@@ -487,6 +588,16 @@
                         <outletCollection property="allTextFields" destination="GdC-TM-GV1" collectionClass="NSMutableArray" id="1ka-3k-Hp2"/>
                         <outletCollection property="allTextFields" destination="bTq-ER-zHC" collectionClass="NSMutableArray" id="m00-zD-TQD"/>
                         <outletCollection property="allTextFields" destination="Fn9-J3-SnB" collectionClass="NSMutableArray" id="mVE-D7-WF2"/>
+                        <outletCollection property="allTextFields" destination="4Oi-cf-PAl" collectionClass="NSMutableArray" id="XZt-Q9-78t"/>
+                        <outletCollection property="allTextFields" destination="I0h-hj-1sa" collectionClass="NSMutableArray" id="Zf5-FE-Fwf"/>
+                        <outletCollection property="allTextFields" destination="TqV-1c-V2d" collectionClass="NSMutableArray" id="9lg-zg-lJy"/>
+                        <outletCollection property="allTextFields" destination="AXy-74-jAB" collectionClass="NSMutableArray" id="9b6-cJ-E90"/>
+                        <outletCollection property="allTextFields" destination="lXu-j7-UMP" collectionClass="NSMutableArray" id="YjP-jv-1dz"/>
+                        <outletCollection property="allTextFields" destination="Q1t-zj-5PJ" collectionClass="NSMutableArray" id="IL1-pa-R8R"/>
+                        <outletCollection property="allTextFields" destination="BFl-zn-Ecx" collectionClass="NSMutableArray" id="7GM-O1-iT5"/>
+                        <outletCollection property="allTextFields" destination="aqU-3E-C2h" collectionClass="NSMutableArray" id="jJY-fW-awn"/>
+                        <outletCollection property="allTextFields" destination="1T6-05-bGk" collectionClass="NSMutableArray" id="DqU-xa-BeR"/>
+                        <outletCollection property="allTextFields" destination="bt4-c2-kii" collectionClass="NSMutableArray" id="ynT-Xl-ayT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IId-9f-tGz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

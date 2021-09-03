@@ -45,6 +45,8 @@ struct Command: Codable {
             commandType = .call(phoneNumber: arguments?.phoneNumber)
         case 5:
             commandType = .wifi(ssid: arguments?.ssid, password: arguments?.wifiPassword)
+        case 6:
+            commandType = .openMap(coordinates: arguments?.coordinates, destination: arguments?.destinationName)
         default:
             commandType = .unsupported
         }
@@ -58,4 +60,6 @@ struct Arguments: Codable {
     let url: String?
     let ssid: String?
     let wifiPassword: String?
+    let coordinates: GeoPoint?
+    let destinationName: String?
 }
