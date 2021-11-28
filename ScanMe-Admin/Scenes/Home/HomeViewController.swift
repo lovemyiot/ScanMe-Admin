@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var scannedTagsLabel: UILabel!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var helloLabel: UILabel!
+    @IBOutlet private weak var signOutButton: UIButton!
     
     private var shouldSaveOnlyOneTag = true
     private var isInSavingMode = false
@@ -28,6 +29,7 @@ class HomeViewController: UIViewController {
             saveButton.backgroundColor = isLoggedIn ? .white : Colors.lightGray
             loginButton.isHidden = isLoggedIn
             helloLabel.isHidden = !isLoggedIn
+            signOutButton.isHidden = !isLoggedIn
         }
     }
     
@@ -76,6 +78,8 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         readButton.layer.cornerRadius = 6
         saveButton.layer.cornerRadius = 6
+        loginButton.layer.cornerRadius = 6
+        signOutButton.layer.cornerRadius = 6
         activityIndicator.hidesWhenStopped = true
         readButton.setTitleColor(.systemGray, for: .disabled)
         saveButton.setTitleColor(.systemGray, for: .disabled)
@@ -165,6 +169,15 @@ class HomeViewController: UIViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         showLoginPopup()
+    }
+    
+    @IBAction func signOutPressed(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            isLoggedIn = false
+        } catch {
+            showAlert(title: DescriptionKeys.signOutErrorTitle, message: DescriptionKeys.signOutError)
+        }
     }
 }
 

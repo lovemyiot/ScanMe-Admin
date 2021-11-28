@@ -51,13 +51,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScanMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAd-aJ-iem">
-                                <rect key="frame" x="50" y="124" width="314" height="76"/>
+                                <rect key="frame" x="50" y="194" width="314" height="76"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADMINISTRATIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMU-QI-WTh">
-                                <rect key="frame" x="50" y="225" width="314" height="25.5"/>
+                                <rect key="frame" x="50" y="295" width="314" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -77,43 +77,59 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scanned tags: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPS-UW-faV">
-                                <rect key="frame" x="20" y="56.5" width="145" height="18.5"/>
+                                <rect key="frame" x="20" y="66" width="145" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bya-yE-RTh">
-                                <rect key="frame" x="20" y="50" width="164" height="31"/>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
+                                <rect key="frame" x="20" y="66" width="147" height="16"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="Login to continue">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="linkColor"/>
                                 </state>
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnB-Iw-hoY"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amj-eu-kYB">
-                                <rect key="frame" x="338.5" y="56.5" width="55.5" height="18.5"/>
+                                <rect key="frame" x="338.5" y="66" width="55.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-OM-KeQ">
+                                <rect key="frame" x="318" y="99.5" width="76" height="16"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="Sign out">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yD-Ge-t1X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3rz-zI-wNf" secondAttribute="bottom" constant="160" id="18B-4y-2mZ"/>
-                            <constraint firstItem="tAd-aJ-iem" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="35G-Zf-R3L"/>
+                            <constraint firstItem="tAd-aJ-iem" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="35G-Zf-R3L"/>
                             <constraint firstItem="vPS-UW-faV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9Va-bn-t6w"/>
-                            <constraint firstItem="Bya-yE-RTh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="Arw-Yr-rho"/>
+                            <constraint firstItem="Bya-yE-RTh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="Arw-Yr-rho"/>
+                            <constraint firstItem="zHu-OM-KeQ" firstAttribute="top" secondItem="Amj-eu-kYB" secondAttribute="bottom" constant="15" id="COS-Q6-thg"/>
                             <constraint firstItem="F5z-uO-Dgi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DRZ-kZ-Xdg"/>
                             <constraint firstItem="NHF-vY-ZUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="G5s-4g-X5v"/>
                             <constraint firstItem="Bya-yE-RTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jgl-bB-mLQ"/>
                             <constraint firstItem="Amj-eu-kYB" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="O7D-HZ-LKw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Amj-eu-kYB" secondAttribute="trailing" constant="20" id="PIU-Ed-Mp2"/>
                             <constraint firstAttribute="trailing" secondItem="F5z-uO-Dgi" secondAttribute="trailing" id="RdM-7O-2h2"/>
+                            <constraint firstItem="zHu-OM-KeQ" firstAttribute="trailing" secondItem="Amj-eu-kYB" secondAttribute="trailing" id="Ref-74-JBj"/>
                             <constraint firstItem="F5z-uO-Dgi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X06-G1-L0c"/>
-                            <constraint firstItem="vPS-UW-faV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12.5" id="XLg-T3-9el"/>
+                            <constraint firstItem="vPS-UW-faV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="XLg-T3-9el"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tAd-aJ-iem" secondAttribute="trailing" constant="50" id="bX7-us-mkZ"/>
                             <constraint firstItem="3rz-zI-wNf" firstAttribute="top" secondItem="NHF-vY-ZUf" secondAttribute="bottom" constant="40" id="cNE-jO-wYz"/>
                             <constraint firstItem="I41-7K-RPF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cPn-gN-aeT"/>
@@ -139,6 +155,7 @@
                         <outlet property="readButton" destination="NHF-vY-ZUf" id="PQn-0a-QuA"/>
                         <outlet property="saveButton" destination="3rz-zI-wNf" id="WB6-fj-YcR"/>
                         <outlet property="scannedTagsLabel" destination="vPS-UW-faV" id="55y-Bq-d5i"/>
+                        <outlet property="signOutButton" destination="zHu-OM-KeQ" id="Zhn-sb-pqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

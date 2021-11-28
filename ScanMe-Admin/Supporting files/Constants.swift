@@ -57,6 +57,8 @@ enum DescriptionKeys {
     static let username = "Username"
     static let password = "Password"
     static let authenticationFailed = "Authentication failed"
+    static let signOutErrorTitle = "Sign out error"
+    static let signOutError = "Could not sign out. Try again later."
 }
 
 enum Colors {
