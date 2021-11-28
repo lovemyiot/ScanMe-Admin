@@ -7,11 +7,13 @@
 
 import Foundation
 import XCoordinator
+import MessageUI
 
 enum MainRoute: Route {
     case home
     case saveCommand(identifiers: [String])
     case back
+    case textMessage(message: String, phoneNumber: String, delegate: MFMessageComposeViewControllerDelegate)
 }
 
 class MainCoordinator: NavigationCoordinator<MainRoute> {
@@ -34,6 +36,16 @@ class MainCoordinator: NavigationCoordinator<MainRoute> {
             
         case .back:
             return .pop()
+            
+        case let .textMessage(message, phoneNumber, delegate):
+            guard MFMessageComposeViewController.canSendText() else {
+                return .none()
+            }
+            let messageViewController = MFMessageComposeViewController()
+            messageViewController.body = message
+            messageViewController.recipients = [phoneNumber]
+            messageViewController.messageComposeDelegate = delegate
+            return .present(messageViewController)
         }
     }
 }

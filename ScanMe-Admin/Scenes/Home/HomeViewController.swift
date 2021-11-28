@@ -38,9 +38,6 @@ class HomeViewController: UIViewController {
     var session: NFCTagReaderSession?
     var viewModel: HomeViewModel! {
         didSet {
-            viewModel.onTextMessage = { [weak self] vc in
-                self?.present(vc, animated: true, completion: nil)
-            }
             viewModel.onAlert = { [weak self] title, message in
                 self?.showAlert(title: title, message: message)
             }

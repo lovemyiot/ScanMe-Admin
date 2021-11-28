@@ -15,7 +15,6 @@ class HomeViewModel: NSObject {
     private let router: UnownedRouter<MainRoute>
     var identifiers: [String] = []
 
-    var onTextMessage: ((MFMessageComposeViewController) -> Void)?
     var onAlert: ((String, String) -> Void)?
     
     init(router: UnownedRouter<MainRoute>) {
@@ -150,11 +149,7 @@ class HomeViewModel: NSObject {
             return
         }
         if MFMessageComposeViewController.canSendText() {
-            let messageViewController = MFMessageComposeViewController()
-            messageViewController.body = message
-            messageViewController.recipients = [phoneNumber]
-            messageViewController.messageComposeDelegate = self
-            onTextMessage?(messageViewController)
+            router.trigger(.textMessage(message: message, phoneNumber: phoneNumber, delegate: self))
         } else {
             onAlert?(DescriptionKeys.smsNotSupportedTitle, DescriptionKeys.smsNotSupported)
         }
