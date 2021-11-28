@@ -5,7 +5,7 @@
 //  Created by Jacek Kopaczel on 22/07/2021.
 //
 
-import Foundation
+import UIKit
 
 enum DescriptionKeys {
     // MARK: - NFC session
@@ -46,13 +46,21 @@ enum DescriptionKeys {
     static let numberOfTags = "Number of tags to save"
     static let saveOneOrMore = "Do you want to save only one tag at once or more ?"
     static let writingErrorTitle = "Error writing command"
-    static let writingError = "Could not write data to Firestore."
+    static let writingError = "Could not write data to the database."
     static let writingSuccessTitle = "Success writing command"
-    static let writingSuccess = "Successfully wrote data to Firestore!"
+    static let writingSuccess = "Successfully wrote data to the database!"
     
     // MARK: - Firebase auth
     static let authErrorTitle = "Authentication error"
-    static let authError = "Could not authenticate to Firebase."
+    static let authError = "Authentication failed. Check for any misspellings and try again."
+    static let authenticationRequired = "Authentication required"
+    static let username = "Username"
+    static let password = "Password"
+    static let authenticationFailed = "Authentication failed"
+}
+
+enum Colors {
+    static let lightGray = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
 }
 
 enum FirestoreKeys {

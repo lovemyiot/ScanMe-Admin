@@ -14,9 +14,26 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var doneButton: UIButton!
+    @IBOutlet private weak var scannedTagsLabel: UILabel!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var helloLabel: UILabel!
     
     private var shouldSaveOnlyOneTag = true
     private var isInSavingMode = false
+    private var isLoggedIn: Bool = false {
+        didSet {
+            readButton.isEnabled = isLoggedIn
+            saveButton.isEnabled = isLoggedIn
+            readButton.backgroundColor = isLoggedIn ? .white : Colors.lightGray
+            saveButton.backgroundColor = isLoggedIn ? .white : Colors.lightGray
+            loginButton.isHidden = isLoggedIn
+            helloLabel.isHidden = !isLoggedIn
+        }
+    }
+    
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    private var username: String?
 
     var session: NFCTagReaderSession?
     var viewModel: HomeViewModel! {
@@ -35,23 +52,27 @@ class HomeViewController: UIViewController {
         checkNFCAvailability()
         setupView()
         CommandManager.shared.locationManager.requestWhenInUseAuthorization()
-        firebaseSignIn()
+        handle = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            guard let self = self else { return }
+            guard let user = user else {
+                self.username = nil
+                self.isLoggedIn = false
+                return
+            }
+            self.isLoggedIn = true
+            let username = user.displayName ?? user.email
+            self.helloLabel.text = "Hello \(username ?? "")"
+            self.username = username
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         doneButton.isHidden = true
-        readButton.isEnabled = true
-        saveButton.isEnabled = true
+        readButton.isEnabled = isLoggedIn
+        saveButton.isEnabled = isLoggedIn
+        scannedTagsLabel.isHidden = true
         viewModel.resetData()
-    }
-    
-    private func firebaseSignIn() {
-        Auth.auth().signInAnonymously { [weak self] authResult, error in
-            if error != nil {
-                self?.showAlert(title: DescriptionKeys.authErrorTitle, message: DescriptionKeys.authError)
-            }
-        }
     }
     
     private func setupView() {
@@ -59,6 +80,8 @@ class HomeViewController: UIViewController {
         readButton.layer.cornerRadius = 6
         saveButton.layer.cornerRadius = 6
         activityIndicator.hidesWhenStopped = true
+        readButton.setTitleColor(.systemGray, for: .disabled)
+        saveButton.setTitleColor(.systemGray, for: .disabled)
     }
     
     private func checkNFCAvailability() {
@@ -75,8 +98,7 @@ class HomeViewController: UIViewController {
     
     private func saveMore(action: UIAlertAction) {
         doneButton.isHidden = false
-        readButton.isEnabled = false
-        saveButton.isEnabled = false
+        scannedTagsLabel.isHidden = false
         shouldSaveOnlyOneTag = false
         startNFCSession()
     }
@@ -85,6 +107,38 @@ class HomeViewController: UIViewController {
         session = NFCTagReaderSession(pollingOption: [.iso14443], delegate: self)
         session?.alertMessage = DescriptionKeys.sessionAlert
         session?.begin()
+    }
+    
+    private func showLoginPopup() {
+        let alertController = UIAlertController(title: DescriptionKeys.authenticationRequired, message: "", preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = DescriptionKeys.username
+        }
+        alertController.addTextField { textField in
+            textField.placeholder = DescriptionKeys.password
+            textField.isSecureTextEntry = true
+        }
+        let loginAction = UIAlertAction(title: "Sign in", style: .default, handler: { [weak self] _ in
+            let username = alertController.textFields![0].text ?? ""
+            let password = alertController.textFields![1].text ?? ""
+            self?.signIn(username, password)
+        })
+        
+        alertController.addAction(loginAction)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func signIn(_ username: String, _ password: String) {
+        Auth.auth().signIn(withEmail: username, password: password) { [weak self] authResult, error in
+            guard let self = self else { return }
+            guard error == nil else {
+                self.showAlert(title: DescriptionKeys.authErrorTitle, message: DescriptionKeys.authError)
+                return
+            }
+            self.isLoggedIn = true
+        }
     }
     
     @IBAction func readPressed(_ sender: UIButton) {
@@ -107,7 +161,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: UIButton) {
+        scannedTagsLabel.isHidden = true
+        viewModel.resetData()
         viewModel.goToSaveCommand()
+    }
+    
+    @IBAction func loginPressed(_ sender: UIButton) {
+        showLoginPopup()
     }
 }
 
@@ -119,6 +179,15 @@ extension HomeViewController: NFCTagReaderSessionDelegate {
     
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
         print("Session ended: \(error.localizedDescription)")
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if (error as? NFCReaderError)?.errorCode == NFCReaderError.readerSessionInvalidationErrorSessionTimeout.rawValue {
+                self.scannedTagsLabel.isHidden = !(self.viewModel.identifiers.count > 0)
+            }
+            self.doneButton.isHidden = !(self.viewModel.identifiers.count > 0)
+            self.scannedTagsLabel.text = "Scanned tags: \(self.viewModel.identifiers.count)"
+        }
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
@@ -170,5 +239,3 @@ extension HomeViewController: NFCTagReaderSessionDelegate {
         }
     }
 }
-
-
