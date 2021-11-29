@@ -105,7 +105,7 @@ class HomeViewController: UIViewController {
     }
     
     private func startNFCSession() {
-        session = NFCTagReaderSession(pollingOption: [.iso14443], delegate: self)
+        session = NFCTagReaderSession(pollingOption: [.iso14443, .iso18092, .iso15693], delegate: self)
         session?.alertMessage = DescriptionKeys.sessionAlert
         session?.begin()
     }
@@ -139,6 +139,35 @@ class HomeViewController: UIViewController {
                 return
             }
             self.isLoggedIn = true
+        }
+    }
+    
+    private func proceedWithTag(_ identifier: String) {
+        if !self.isInSavingMode {
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = false
+                self.activityIndicator.startAnimating()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.viewModel.fetchCommand(for: identifier) { [weak self] commandDetails in
+                    self?.viewModel.processCommand(commandDetails) { [weak self] in
+                        DispatchQueue.main.async {
+                            self?.activityIndicator.stopAnimating()
+                        }
+                    }
+                }
+            }
+        } else if self.shouldSaveOnlyOneTag {
+            self.viewModel.identifiers.append(identifier)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.viewModel.goToSaveCommand()
+            }
+        } else {
+            self.viewModel.identifiers.append(identifier)
+            session?.invalidate()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                self.startNFCSession()
+            }
         }
     }
     
@@ -210,40 +239,26 @@ extension HomeViewController: NFCTagReaderSessionDelegate {
             if error != nil {
                 session.invalidate(errorMessage: DescriptionKeys.connectionFailed)
             }
-            
+            var identifier: String
             switch tag {
-            case .miFare(let mifareTag):
-                let identifier = mifareTag.identifier.map { String(format: "%.2hhx", $0) }.joined()
+            case .miFare(let tag):
+                identifier = tag.identifier.map { String(format: "%.2hhx", $0) }.joined()
                 print("MiFare tag detected: \(identifier)")
-                if !self.isInSavingMode {
-                    DispatchQueue.main.async {
-                        self.activityIndicator.isHidden = false
-                        self.activityIndicator.startAnimating()
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.viewModel.fetchCommand(for: identifier) { [weak self] commandDetails in
-                            self?.viewModel.processCommand(commandDetails) { [weak self] in
-                                DispatchQueue.main.async {
-                                    self?.activityIndicator.stopAnimating()
-                                }
-                            }
-                        }
-                    }
-                } else if self.shouldSaveOnlyOneTag {
-                    self.viewModel.identifiers.append(identifier)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.viewModel.goToSaveCommand()
-                    }
-                } else {
-                    self.viewModel.identifiers.append(identifier)
-                    session.invalidate()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                        self.startNFCSession()
-                    }
-                }
-                
+            case .iso7816(let tag):
+                identifier = tag.identifier.map { String(format: "%.2hhx", $0) }.joined()
+                print("ISO7816 tag detected: \(identifier)")
+            case .iso15693(let tag):
+                identifier = tag.identifier.map { String(format: "%.2hhx", $0) }.joined()
+                print("ISO15693 tag detected: \(identifier)")
+            case .feliCa(let tag):
+                identifier = tag.currentIDm.map { String(format: "%.2hhx", $0) }.joined()
+                print("FeliCa tag detected: \(identifier)")
             default:
+                identifier = ""
                 print("Unsupported tag type detected!")
+            }
+            if identifier != "" {
+                self.proceedWithTag(identifier)
             }
             session.invalidate()
         }
