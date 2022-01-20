@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
             }
             self.isLoggedIn = true
             let username = user.displayName ?? user.email
-            self.helloLabel.text = "Hello \(username ?? "")"
+            self.helloLabel.text = "Hello \n\(username ?? "")"
             self.username = username
         }
     }
