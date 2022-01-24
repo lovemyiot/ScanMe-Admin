@@ -53,6 +53,7 @@ class HomeViewModel: NSObject {
         CommandManager.shared.processCommands(commandDetails) { [weak self] command in
             guard let safeCommand = command else {
                 print("Error processing command!")
+                completion()
                 return
             }
             switch safeCommand {
@@ -82,7 +83,7 @@ class HomeViewModel: NSObject {
     }
     
     private func openMap(latitude: Double?, longitude: Double?, destination: String?) {
-        guard let latitude = latitude, let longitude = longitude, let destination = destination else {
+        guard let latitude = latitude, let longitude = longitude else {
             onAlert?(DescriptionKeys.validationError, DescriptionKeys.nonValidParameters)
             return
         }
