@@ -198,8 +198,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: UIButton) {
         scannedTagsLabel.isHidden = true
-        viewModel.resetData()
         viewModel.goToSaveCommand()
+        viewModel.resetData()
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
